@@ -53,7 +53,7 @@ if __name__ == "__main__":
 ### 2nd part
     df_v = pd.read_csv('vehicles.csv')
     df_v_current = df_v.values.T[0]
-    print(boostrap(df_v_current, df_v_current.shape[0], 100))
+    #print(boostrap(df_v_current, df_v_current.shape[0], 100))
     boots_v_current = []
     for i in range(100, 100000, 1000):
         boot = boostrap(df_v_current, df_v_current.shape[0], i)
@@ -72,9 +72,9 @@ if __name__ == "__main__":
     sns_plotx.savefig("bootstrap_confidence_current_vehicles.pdf", bbox_inches='tight')
 
 
-    df_v_new = (df_v.dropna()).values.T[0]
+    df_v_new = (df_v.dropna()).values.T[1]
     print(df_v_new.shape)
-    print(boostrap(df_v_new, df_v_new.shape[0], 100))
+    #print(boostrap(df_v_new, df_v_new.shape[0], 100))
     boots_new_vehicle = []
     for i in range(100, 100000, 1000):
         boot = boostrap(df_v_new, df_v_new.shape[0],i)
@@ -91,6 +91,9 @@ if __name__ == "__main__":
 
     sns_ploty.savefig("bootstrap_confidence_new_vehicle.png", bbox_inches='tight')
     sns_ploty.savefig("bootstrap_confidence_new_vehicle.pdf", bbox_inches='tight')
+
+
+### After comparing the results I have concluded that new fleet is better than current fleet
 
 
 
