@@ -15,9 +15,9 @@ plt.show()
 
 sns_plot2 = sns.distplot(df['Current fleet'], bins=20, kde=False, rug=True).get_figure()
 plt.show()
-sns_plot.savefig("current_fleet.png",bbox_inches='tight')
+sns_plot2.savefig("current_fleet.png",bbox_inches='tight')
 
 
 sns_plot3 = sns.distplot(df['New Fleet'].dropna(), bins=20, kde=False, rug=True).get_figure()
 plt.show()
-sns_plot.savefig("new_fleet.png",bbox_inches='tight')
+sns_plot3.savefig("new_fleet.png",bbox_inches='tight')
